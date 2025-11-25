@@ -1,6 +1,7 @@
 def call() {
   sh """
-    docker tag django-notes-app-django_app/$USER django-notes-app-django_app:latest
-    docker push $USER django-notes-app-django_app:latest
-    """
+    docker tag cicd_django_notes_app-django_app:latest ${user}/django-notes-app:latest
+    docker push ${user}/django-notes-app:latest
+  """
 }
+
