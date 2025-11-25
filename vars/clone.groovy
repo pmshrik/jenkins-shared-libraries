@@ -1,9 +1,4 @@
-def call(String url, String branch) {
-    echo "Cloning repository: ${url} on branch: ${branch}"
-
-    checkout([
-        $class: 'GitSCM',
-        branches: [[name: branch]],
-        userRemoteConfigs: [[url: url]]
-    ])
+def call(String url, String branch) { 
+    echo "Cloning code from ${url} , branch: ${branch}"
+    git url: url, branch: branch
 }
